@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+/* Primary */
+
+--Moderate-violet: hsl(263, 55%, 52%);
+--Very-dark-grayish-blue: hsl(217, 19%, 35%);
+--Very-dark-blackish-blue: hsl(219, 29%, 14%);
+--White: hsl(0, 0%, 100%);
+
+/* Neutral */
+
+--Light-gray: hsl(0, 0%, 81%);
+--Light-grayish-blue: hsl(210, 46%, 95%);
+
+/* Fonts */
+--text-font: 'Barlow Semi Condensed', sans-serif;
+--body: .8125rem;
+--title: 1rem;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--text-font);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: var(--Light-grayish-blue);
+
+}
+
+p {
+    font-size: var(--body);
+}
+
+img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.bg {
+    /* border: 2px solid red; */
+    padding: 2rem;
+    background: var(--Light-grayish-blue);
+}
+
+
+.article-one {
+    grid-area: article-one;
+    background-color: var(--Moderate-violet);
+    color: var(--Light-gray);
+    background-image: url('images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position: top right 5%;
+}
+
+.article-two {
+    grid-area: article-two;
+    background-color: var(--Very-dark-grayish-blue);
+    color: var(--Light-gray);
+}
+
+.article-three {
+    grid-area: article-three;
+    background-color: var(--White);
+}
+
+.article-four {
+    grid-area: article-four;
+    background-color: var(--Very-dark-blackish-blue);
+    color: var(--Light-gray);
+}
+
+.article-five {
+    grid-area: article-five;
+    background-color: var(--White);
+}
+
+.article__container {
+    padding: 1rem;
+    /* border: 2px solid orangered; */
+    display: grid;
+    grid-gap: 1.5rem;
+    grid-template-areas: 
+    'article-one'
+    'article-two'
+    'article-three'
+    'article-four'
+    'article-five'
+    ;
+}
+
+.card {
+    /* border: 2px solid black; */
+    border-radius: .5rem;
+    padding: 1rem;
+   
+}
+
+.user {
+    /* border: 2px solid purple; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    align-items: center;
+}
+
+.user > .img-1, .user > .img-4 {
+    border: 3px solid #A775F1;
+}
+
+
+.user__identity span {
+    font-weight: 500;
+    font-size: .9rem;
+}
+
+.user__identity > .verified{
+    color: var(--Light-gray);
+    opacity: .5;
+}
+.speech{
+    color: var(--Light-gray);
+    opacity: .7;
+    padding-bottom: .3rem;
+}
+
+.quote {
+    color: var(--White);
+    font-weight: 500;
+    font-size: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.article-three > .user > .user__identity  > .verified,
+.article-five > .user > .user__identity  > .verified{
+    color: var(--Very-dark-blackish-blue);
+    opacity: .5;
+}
+.article-three  > .speech,
+.article-five  > .speech{
+    color: var(--Very-dark-blackish-blue);
+    opacity: .7;
+    padding-bottom: .3rem;
+}
+
+.article-three  > .quote,
+.article-five  > .quote {
+    color: var(--Very-dark-blackish-blue);
+    font-weight: 500;
+    font-size: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    
+}
+
+@media screen and (min-width: 700px) {
+    .article__container {
+        padding: 1rem;
+        /* border: 2px solid orangered; */
+        grid-gap: 20px;
+      grid-template-columns:  repeat(2, 16rem);
+        grid-template-areas: 
+        'article-one article-one '
+        'article-two article-three' 
+        'article-four article-five'
+        ;
+        /* max-width: 100%; */
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .article__container {
+        padding: 1rem;
+        /* border: 2px solid orangered; */
+        grid-gap: 20px;
+      grid-template-columns:  repeat(4, 15rem);
+        grid-template-areas: 
+        'article-one article-one article-two article-five'
+        'article-three article-four article-four article-five'
+        ;
+        max-width: 100%;
+    }
+}
